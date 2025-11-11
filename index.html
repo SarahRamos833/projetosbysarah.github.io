@@ -1,6 +1,39 @@
 <!DOCTYPE HTML>
 <html>
 
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<style>
+		.horizontal-scroll-container {
+			display: flex;            /* O truque para alinhar tudo lado a lado */
+			overflow-x: auto;         /* Cria o scroll horizontal */
+			overflow-y: hidden;       /* Esconde o scroll vertical */
+			padding-bottom: 20px;     /* Um espaço para a barra de scroll não colar no fim */
+		}
+
+		.horizontal-card {
+			flex: 0 0 auto;           /* Diz ao card para não encolher */
+			width: 300px;             /* Largura fixa de cada projeto (MUDE SE QUISER) */
+			margin-right: 20px;       /* Espaço entre os projetos */
+		}
+
+		/* Deixa a barra de scroll mais bonita (Opcional) */
+		.horizontal-scroll-container::-webkit-scrollbar {
+			height: 8px;
+		}
+		.horizontal-scroll-container::-webkit-scrollbar-track {
+			background: #f1f1f1;
+			border-radius: 4px;
+		}
+		.horizontal-scroll-container::-webkit-scrollbar-thumb {
+			background: #888;
+			border-radius: 4px;
+		}
+		.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+			background: #555;
+		}
+	</style>
+	
 <head>
 	<title>Projetos by Sarah</title>
 	<meta charset="utf-8" />
@@ -42,36 +75,38 @@
 		</section>
 
 		<section id="two">
-			<h2>Portfólio</h2>
-			<div class="row">
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/fulls/01.jpg" class="image fit thumb">
-						<img src="images/thumbs/01.jpg" alt="PCB-KART" />
-					</a>
-					<h3>PCB-KART</h3>
-					<p>Descrição curta do seu projeto PCB-KART. Para detalhes, você pode linkar para uma página específica do projeto.</p>
-				</article>
+	<h2>Portfólio</h2>
+	
+	<div class="horizontal-scroll-container">
 
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/fulls/02.jpg" class="image fit thumb">
-						<img src="images/thumbs/02.jpg" alt="Nome do Projeto 2" />
-					</a>
-					<h3>[SEU PROJETO 2]</h3>
-					<p>Descrição curta do seu segundo projeto com uma imagem única.</p>
-				</article>
+		<article class="work-item horizontal-card">
+			<a href="images/fulls/01.jpg" class="image fit thumb">
+				<img src="images/thumbs/01.jpg" alt="PCB-KART" />
+			</a>
+			<h3>PCB-KART</h3>
+			<p>Descrição curta do seu projeto PCB-KART.</p>
+		</article>
 
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/fulls/03.jpg" class="image fit thumb">
-						<img src="images/thumbs/03.jpg" alt="Nome do Projeto 3" />
-					</a>
-					<h3>[SEU PROJETO 3]</h3>
-					<p>Descrição curta do seu terceiro projeto com uma imagem única.</p>
-				</article>
-			</div>
-			<ul class="actions">
-				<li><a href="#" class="button">Veja Outros Projetos</a></li>
-			</ul>
-		</section>
+		<article class="work-item horizontal-card">
+			<a href="images/fulls/02.jpg" class="image fit thumb">
+				<img src="images/thumbs/02.jpg" alt="[SEU PROJETO 2]" />
+			</a>
+			<h3>[SEU PROJETO 2]</h3>
+			<p>Descrição curta do seu segundo projeto.</p>
+		</article>
+		
+		<article class="work-item horizontal-card">
+			<a href="images/fulls/03.jpg" class="image fit thumb">
+				<img src="images/thumbs/03.jpg" alt="[SEU PROJETO 3]" />
+			</a>
+			<h3>[SEU PROJETO 3]</h3>
+			<p>Descrição curta do seu terceiro projeto.</p>
+		</article>
+
+		</div> <ul class="actions">
+		<li><a href="#" class="button">Veja Outros Projetos</a></li>
+	</ul>
+</section>
 
 		<section id="three">
 			<h2>Meus Serviços</h2>
