@@ -5,24 +5,30 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-
-<style>
+	
+	<style>
 		.blog-post-item {
-			border: 2px solid #555;  /* Borda (mude #555 para outra cor se quiser) */
-			border-radius: 10px;     /* Cantos arredondados */
-			background-color: transparent; /* Fundo transparente */
-			padding: 1.5em;          /* Espaçamento interno (para não grudar) */
-			margin-bottom: 2em;      /* Espaço entre um post e outro */
+			border: 2px solid #555;
+			border-radius: 10px;
+			background-color: transparent;
+			padding: 1.5em;
+			margin-bottom: 2em;
 		}
 	</style>
 	
 </head>
-	
-	</head>
 <body class="is-preload">
 
 	<header id="header">
-		</header>
+		<div class="inner">
+			<a href="index.html" class="image avatar">
+				<img src="images/avatar.jpg" alt="Projetos by Sarah" />
+			</a>
+			<h1><strong>PROJETOS BY SARAH</strong>,<br />
+				Engenheira Eletrônica<br />
+				Designer de PCB, modeladora 3D e Criadora de Projetos Eletrônicos.</h1>
+		</div>
+	</header>
 
 	<div id="main">
 
@@ -31,6 +37,10 @@
 				<h2>Meu Blog</h2>
 			</header>
 
+			<ul class="actions">
+				<li><a href="index.html" class="button">Voltar ao Menu Principal</a></li>
+			</ul>
+
 			<input type="text" id="searchInput" onkeyup="filterPosts()" placeholder="Pesquisar por tema ou título...">
 
 			<hr />
@@ -38,24 +48,33 @@
 			<div id="postList">
 
 				<article class="blog-post-item">
-					<a href="posts/post-01.html" class="image fit">
-						<img src="images/fulls/10.png" alt="Altium Designer" />
+					<a href="posts/por-que-usar-altium.html" class="image fit">
+						<img src="images/fulls/10.jpg" alt="Altium Designer" />
 					</a>
-					<h3>Por que eu escolhi o Altium Designer para meus projetos de PCB?</h3>
-					<p>Mais do que um software, uma ferramenta completa de engenharia.</p>
-					<ul class="actions">
-						<li><a href="posts/post-01.html" class="button">Leia o Texto Completo</a></li>
-					</ul>
-				</article>
+					<h3><a href="posts/por-que-usar-altium.html">Por que eu escolhi o Altium Designer?</a></h3>
+					<p>Para o nosso primeiro post, eu quis falar sobre a ferramenta que está no coração de quase todo projeto de PCB...</p>
+					</article>
 
-
-				</div>
+			</div>
 		</section>
 
 	</div>
 
 	<footer id="footer">
-		</footer>
+		<div class="inner">
+			<ul class="icons">
+				<li><a href="https://w.app/rgtn2t" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+				<li><a href="https://github.com/projetosbysarah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="https://br.linkedin.com/in/sarah-de-almeida-ramos-b6703b221" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="https://www.instagram.com/sarah.ramos18" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://www.tiktok.com/@sarah.ramos18?_r=1&_t=ZS-91K7nBwhfma" target="_blank" class="icon brands fa-tiktok"><span class="label">TikTok</span></a></li>
+			</ul>
+			<ul class="copyright" style="margin-top: 2em;">
+				<li>&copy; 2025 Projetos by Sarah</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
 
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.poptrox.min.js"></script>
@@ -63,32 +82,19 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
 	<script>
 	function filterPosts() {
-		// Pega o que o usuário digitou (em minúsculas)
 		var input = document.getElementById("searchInput");
 		var filter = input.value.toLowerCase();
-
-		// Pega a lista de posts
 		var postList = document.getElementById("postList");
 		var posts = postList.getElementsByClassName("blog-post-item");
-
-		// Loop por todos os posts
 		for (var i = 0; i < posts.length; i++) {
-			// Pega o título (h3) e o parágrafo (p)
 			var title = posts[i].getElementsByTagName("h3")[0];
 			var snippet = posts[i].getElementsByTagName("p")[0];
-			
-			// Junta o texto do título e do snippet
 			var textToSearch = title.textContent.toLowerCase() + snippet.textContent.toLowerCase();
-
-			// Se o texto digitado ESTÁ no texto do post, mostra o post
 			if (textToSearch.indexOf(filter) > -1) {
 				posts[i].style.display = "";
-			} 
-			// Senão, esconde o post
-			else {
+			} else {
 				posts[i].style.display = "none";
 			}
 		}
